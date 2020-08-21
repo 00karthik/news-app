@@ -1,0 +1,2 @@
+export const CHANGE_LANG = 'CHANGE_LANG';
+export const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR';

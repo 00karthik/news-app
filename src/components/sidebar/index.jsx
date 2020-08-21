@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { CaretLeftOutlined } from '@ant-design/icons';
 import { Button, Menu, Layout, Input } from 'antd';
 import './style.less';
 import Topics from '../../constants/topics';
-export const Sidebar = ({ setShowSidebar }) => {
+import { useHistory } from 'react-router-dom';
+import { store } from '../../store';
+import { TOGGLE_SIDEBAR } from '../../constants/actions';
+export const Sidebar = () => {
   const { Sider } = Layout;
   const { Search } = Input;
+  const history = useHistory();
+
+  const globalState = useContext(store);
+  const { dispatch } = globalState;
+
   return (
     <Sider
       theme="light"
@@ -13,7 +21,10 @@ export const Sidebar = ({ setShowSidebar }) => {
       placement="left"
       width={320}
       onClose={() => {
-        setShowSidebar(false);
+        dispatch({
+          type: TOGGLE_SIDEBAR,
+          data: false,
+        });
       }}
       style={{
         overflow: 'auto',
@@ -28,7 +39,10 @@ export const Sidebar = ({ setShowSidebar }) => {
         type="primary"
         icon={<CaretLeftOutlined />}
         onClick={() => {
-          setShowSidebar(false);
+          dispatch({
+            type: TOGGLE_SIDEBAR,
+            data: false,
+          });
         }}
       />
       <div className="search-wrapper">
@@ -36,7 +50,8 @@ export const Sidebar = ({ setShowSidebar }) => {
           <Search
             size="large"
             placeholder="Search news"
-            onSearch={(value) => console.log(value)}
+            onSearch={(value) => history.push(`/${value}`)}
+            onBlur={(e) => history.push(`/${e.target.value}`)}
           />
         </div>
       </div>
@@ -44,7 +59,14 @@ export const Sidebar = ({ setShowSidebar }) => {
         <header className="major">
           <h2>Topics</h2>
         </header>
-        <Menu theme="light" mode="inline" className="topics">
+        <Menu
+          theme="light"
+          mode="inline"
+          className="topics"
+          onClick={(item) => {
+            history.push(`/${item.key}`);
+          }}
+        >
           {Topics.map((topic) => (
             <Menu.Item key={topic}>{topic}</Menu.Item>
           ))}

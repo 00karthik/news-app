@@ -14,7 +14,8 @@ const AppRouter = () => {
     <Router>
       <Switch>
         <Route exact path="/404" component={NotFound} />
-        <Route exact path={routes.HOME} component={Home} />
+        <Redirect path="/" to="/featured" exact={true} />
+        <Route exact path={routes.HOME(':id')} component={Home} />
         <Redirect path="*" to="/404" exact={true} />
       </Switch>
     </Router>

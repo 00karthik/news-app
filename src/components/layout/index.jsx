@@ -1,27 +1,27 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { Layout } from 'antd';
 
 import './style.less';
 import { Sidebar } from '../sidebar';
 import Header from '../header';
+import { store } from '../../store';
 
 const { Content } = Layout;
 
 const AppLayout = ({ children }) => {
-  const [showSidebar, setShowSidebar] = useState(true);
+  // using context api to prevent props drilling
+  const globalState = useContext(store);
+  const { state } = globalState;
+
   return (
     <Layout>
-      {/* visible in mobile view only to open sidebar */}
-
       {/*  sidebar */}
-      {showSidebar && (
-        <Sidebar setShowSidebar={setShowSidebar} showSidebar={showSidebar} />
-      )}
+      {state.showSidebar && <Sidebar />}
 
       <Layout className="site-layout">
         {/* main content */}
-        <Header showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
-        <Content style={{ margin: '24px 0', overflow: 'initial' }}>
+        <Header />
+        <Content style={{ margin: '24px 0', overflow: 'hidden' }}>
           <div className="site-layout-background" style={{ padding: '24 0' }}>
             {/* children components are shown directly */}
             {children}

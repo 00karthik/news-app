@@ -1,23 +1,26 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import './style.less';
 import { Button, Dropdown, Menu } from 'antd';
 import { MenuOutlined, CaretDownOutlined } from '@ant-design/icons';
 import Languages from '../../constants/languages';
+import { store } from '../../store';
+import { CHANGE_LANG, TOGGLE_SIDEBAR } from '../../constants/actions';
 
-const Header = ({ setShowSidebar, showSidebar }) => {
-  // find default Language from browser
-  const [defaultLang, setDefaultLang] = useState(
-    navigator.language || navigator.userLanguage
-      ? (navigator.language || navigator.userLanguage).split('-')[0]
-      : 'en'
-  );
+const Header = () => {
+  // get global store using context hook
+  const globalState = useContext(store);
+  const { state, dispatch } = globalState;
   const menu = (
     <Menu>
+      {/* language array is parsed from gnews.io */}
       {Languages.map((el) => (
         <Menu.Item
           key={el.value}
           onClick={(val) => {
-            setDefaultLang(val.key);
+            dispatch({
+              type: CHANGE_LANG,
+              data: val.key,
+            });
           }}
         >
           <span>{el.label}</span>
@@ -27,12 +30,16 @@ const Header = ({ setShowSidebar, showSidebar }) => {
   );
   return (
     <header id="header">
-      {!showSidebar && (
+      {/* button apppears only if sidebar is collapsed */}
+      {!state.showSidebar && (
         <Button
           className="drawer-handle"
           icon={<MenuOutlined />}
           onClick={() => {
-            setShowSidebar(true);
+            dispatch({
+              type: TOGGLE_SIDEBAR,
+              data: true,
+            });
           }}
         />
       )}
@@ -42,7 +49,7 @@ const Header = ({ setShowSidebar, showSidebar }) => {
       </a>
       <Dropdown overlay={menu} placement="bottomRight" trigger="click">
         <Button className="lang-dropdown" type="primary">
-          {defaultLang}
+          {state.lang}
           <CaretDownOutlined />
         </Button>
       </Dropdown>

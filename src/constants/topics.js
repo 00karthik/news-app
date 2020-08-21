@@ -5,8 +5,6 @@ const Topics = [
   'technology',
   'entertainment',
   'sports',
-  'science',
-  'health',
 ];
 
 export default Topics;
