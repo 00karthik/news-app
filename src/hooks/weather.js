@@ -37,7 +37,7 @@ const UseWeather = () => {
     }
   }, []);
   // return weather details
-  return { weather, status };
+  return { data: weather, status };
 };
 
 export default UseWeather;

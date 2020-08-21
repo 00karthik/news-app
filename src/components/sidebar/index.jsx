@@ -6,6 +6,7 @@ import Topics from '../../constants/topics';
 import { useHistory } from 'react-router-dom';
 import { store } from '../../store';
 import { TOGGLE_SIDEBAR } from '../../constants/actions';
+import Weather from '../weather';
 export const Sidebar = () => {
   const { Sider } = Layout;
   const { Search } = Input;
@@ -71,6 +72,9 @@ export const Sidebar = () => {
             <Menu.Item key={topic}>{topic}</Menu.Item>
           ))}
         </Menu>
+      </div>
+      <div className="weather-wrapper">
+        <Weather />
       </div>
     </Sider>
   );

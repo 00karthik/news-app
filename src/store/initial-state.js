@@ -1,5 +1,5 @@
 const InitialState = {
   lang: 'en',
-  showSidebar: true,
+  showSidebar: window.innerWidth > 768,
 };
 export default InitialState;

@@ -2,7 +2,6 @@ import React from 'react';
 import './style.less';
 import AppLayout from '../layout';
 import MainPost from '../main-post';
-import UseWeather from '../../hooks/weather';
 import UseNews from '../../hooks/news';
 import Loader from '../loader';
 import { FrownOutlined } from '@ant-design/icons';
@@ -10,10 +9,7 @@ import { Row } from 'antd';
 import NewsCard from '../card';
 
 function App() {
-  const weather = UseWeather();
-
-  // const news = UseNews();
-  const news = {};
+  const news = UseNews();
 
   return (
     <AppLayout>
