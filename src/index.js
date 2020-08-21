@@ -1,11 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './common.scss';
-import App from './components/app';
+import './common.less';
+import AppRouter from './routes';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+ReactDOM.render(<AppRouter />, document.getElementById('root'));

@@ -1,0 +1,145 @@
+
+.sidebar {
+  .ant-divider {
+    background: white;
+  }
+  z-index: 9;
+  .sidebar-btn {
+    padding-left: 20px;
+    background: transparent;
+    outline: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  .ant-drawer-body {
+    padding: 0px;
+    background-color: #21262a;
+  }
+  .ant-menu {
+    background-color: transparent;
+    border-right: none;
+    .ant-menu-item {
+      padding-left: 0px !important;
+      border-bottom: 1px solid #ccc;
+      font-size: 16px;
+      height: 50px;
+    }
+    .ant-menu-item-selected {
+      background-color: transparent;
+      border-bottom: 1px solid #f56a6a;
+      &::after {
+        opacity: 0;
+      }
+    }
+
+  }
+}
+
+
+
+.close-sidebar {
+  float: right;
+  position: relative;
+  right: 10px;
+  top: 28px;
+  @media only screen and (min-width: 769px) {
+    display: none;
+  }
+}
+
+.search-wrapper {
+  padding: 22px;
+  background-color: #eef1f2;
+  .search {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: white;
+    font-weight: 600;
+    .ant-input-search {
+      border-radius: 5px;
+      .ant-input-search-icon::before {
+        border-left: none;
+      }
+    }
+    @media only screen and (max-width: 769px) {
+      justify-content: flex-start !important;
+      .ant-input-search {
+        width: 240px !important;
+      }
+    }
+  }
+}
+.sidebar-nav {
+    margin: 22px;
+  }
+  
+  .sidebar {
+    background: #f5f6f7;
+    .ant-divider {
+      background: white;
+    }
+    z-index: 9;
+    .sidebar-btn {
+      padding-left: 20px;
+      background: transparent;
+      outline: none;
+      border: none;
+      color: rgba(255, 255, 255, 0.65);
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .ant-drawer-body {
+      padding: 0px;
+      background-color: #21262a;
+      .ant-menu {
+        background-color: #21262a;
+      }
+    }
+  }
+  
+  .drawer-handle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 41px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 9;
+    text-align: center;
+    line-height: 40px;
+    font-size: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: #fff;
+    @media only screen and (min-width: 769px) {
+      display: none;
+    }
+  }
+
+
+
+  .major {
+    margin-top: 30px;
+    h2 {
+      display: inline;
+      border-bottom: solid 3px #f56a6a;
+      border-bottom-width: 3px;
+      border-bottom-style: solid;
+      border-bottom-color: rgb(245, 106, 106);
+      display: inline-block;
+      margin: 0 0 20px 0;
+      padding: 0 20px 10px 0;
+    }
+}
