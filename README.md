@@ -13,9 +13,9 @@ Also used react-router to pass the search parameter to the news API. (This was d
 
 To run the project
 
-### `npm install`
-### `npm start`
+## npm install
+## npm start
 
 The project can be viewed on 
 
-https://hungry-joliot-6cd05c.netlify.app/
+https://gracious-raman-81221e.netlify.app/featured
