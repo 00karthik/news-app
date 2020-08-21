@@ -15,6 +15,7 @@ export const Sidebar = () => {
   const globalState = useContext(store);
   const { dispatch } = globalState;
 
+  const isMobile = window.innerWidth < 769;
   return (
     <Sider
       theme="light"
@@ -65,6 +66,12 @@ export const Sidebar = () => {
           mode="inline"
           className="topics"
           onClick={(item) => {
+            if (isMobile) {
+              dispatch({
+                type: TOGGLE_SIDEBAR,
+                data: false,
+              });
+            }
             history.push(`/${item.key}`);
           }}
         >

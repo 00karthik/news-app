@@ -7,7 +7,7 @@ const NewsCard = ({ article }) => {
   // card to display the list of news
   const { Meta } = Card;
   return (
-    <Col xs={24} sm={24} md={12} lg={8} xl={8} className="news-card">
+    <Col xs={24} sm={12} md={12} lg={8} xl={8} className="news-card">
       <Card
         cover={
           <img
