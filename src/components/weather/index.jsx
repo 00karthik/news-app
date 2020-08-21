@@ -16,7 +16,9 @@ const Weather = () => {
               <h2>{Math.round(weather.data.main.temp)} °C</h2>
             </Space>
           </Row>
-          <p>Feels like {Math.round(weather.data.main.feels_like)} °C</p>
+          <p>
+            Feels like <b>{Math.round(weather.data.main.feels_like)}</b> °C
+          </p>
           <p className="desc">{weather.data.weather[0].description}</p>
         </div>
       ) : null}
