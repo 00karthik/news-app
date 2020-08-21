@@ -1,0 +1,8 @@
+{
+    "singleQuote": true,
+    "cssEnable": [
+        "css",
+        "less",
+        "sass"
+    ]
+}
