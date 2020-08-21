@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Layout, Button } from 'antd';
-import { MenuOutlined } from '@ant-design/icons';
+import { Layout } from 'antd';
 
 import './style.less';
 import { Sidebar } from '../sidebar';
+import Header from '../header';
 
 const { Content } = Layout;
 
@@ -12,15 +12,7 @@ const AppLayout = ({ children }) => {
   return (
     <Layout>
       {/* visible in mobile view only to open sidebar */}
-      {!showSidebar && (
-        <Button
-          className="drawer-handle"
-          icon={<MenuOutlined />}
-          onClick={() => {
-            setShowSidebar(true);
-          }}
-        />
-      )}
+
       {/*  sidebar */}
       {showSidebar && (
         <Sidebar setShowSidebar={setShowSidebar} showSidebar={showSidebar} />
@@ -28,6 +20,7 @@ const AppLayout = ({ children }) => {
 
       <Layout className="site-layout">
         {/* main content */}
+        <Header showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
         <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
           <div
             className="site-layout-background"

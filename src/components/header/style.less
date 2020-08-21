@@ -1,0 +1,35 @@
+#header {
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 5px solid rgb(245, 106, 106);
+    font-size: 20px;
+
+    @media only screen and (max-width: 769px) {
+        margin: 15px;
+    }
+    .lang-dropdown {
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+    }
+    .header-right {
+        display: flex;
+        cursor: default;
+        padding-left: 0px;
+        list-style: none;
+        @media only screen and (max-width: 769px) {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+    }
+}
+
+.ant-dropdown-menu {
+    max-height: 200px;
+    overflow: scroll;
+}
