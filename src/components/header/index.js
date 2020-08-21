@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.less';
 import { Button, Dropdown, Menu } from 'antd';
 import { MenuOutlined, CaretDownOutlined } from '@ant-design/icons';
@@ -6,13 +6,20 @@ import Languages from '../../constants/languages';
 
 const Header = ({ setShowSidebar, showSidebar }) => {
   // find default Language from browser
-  const defaultLang = (navigator.language || navigator.userLanguage).split(
-    '-'
-  )[0];
+  const [defaultLang, setDefaultLang] = useState(
+    navigator.language || navigator.userLanguage
+      ? (navigator.language || navigator.userLanguage).split('-')[0]
+      : 'en'
+  );
   const menu = (
     <Menu>
       {Languages.map((el) => (
-        <Menu.Item key={el.value}>
+        <Menu.Item
+          key={el.value}
+          onClick={(val) => {
+            setDefaultLang(val.key);
+          }}
+        >
           <span>{el.label}</span>
         </Menu.Item>
       ))}

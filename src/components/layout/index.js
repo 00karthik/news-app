@@ -21,11 +21,8 @@ const AppLayout = ({ children }) => {
       <Layout className="site-layout">
         {/* main content */}
         <Header showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
-        <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
-          <div
-            className="site-layout-background"
-            style={{ padding: 24, textAlign: 'center' }}
-          >
+        <Content style={{ margin: '24px 0', overflow: 'initial' }}>
+          <div className="site-layout-background" style={{ padding: '24 0' }}>
             {/* children components are shown directly */}
             {children}
           </div>

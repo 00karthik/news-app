@@ -1,3 +1,4 @@
+// obtained from scraping the news.io
 const Languages = [
   { label: 'Afrikaans', value: 'af' },
   { label: 'Albanian', value: 'sq' },

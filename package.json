@@ -9,6 +9,7 @@
     "axios": "^0.19.2",
     "craco-less": "^1.17.0",
     "less-loader": "^6.2.0",
+    "moment": "^2.27.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",

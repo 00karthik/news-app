@@ -1,7 +1,8 @@
 import React from 'react';
-import { CaretLeftOutlined, NotificationOutlined } from '@ant-design/icons';
+import { CaretLeftOutlined } from '@ant-design/icons';
 import { Button, Menu, Layout, Input } from 'antd';
 import './style.less';
+import Topics from '../../constants/topics';
 export const Sidebar = ({ setShowSidebar }) => {
   const { Sider } = Layout;
   const { Search } = Input;
@@ -43,19 +44,10 @@ export const Sidebar = ({ setShowSidebar }) => {
         <header className="major">
           <h2>Topics</h2>
         </header>
-        <Menu theme="light" mode="inline">
-          <Menu.Item icon={<NotificationOutlined />} onClick={() => {}}>
-            Featured
-          </Menu.Item>
-          <Menu.Item icon={<NotificationOutlined />} onClick={() => {}}>
-            Trending
-          </Menu.Item>
-          <Menu.Item icon={<NotificationOutlined />} onClick={() => {}}>
-            People
-          </Menu.Item>
-          <Menu.Item icon={<NotificationOutlined />} onClick={() => {}}>
-            Events
-          </Menu.Item>
+        <Menu theme="light" mode="inline" className="topics">
+          {Topics.map((topic) => (
+            <Menu.Item key={topic}>{topic}</Menu.Item>
+          ))}
         </Menu>
       </div>
     </Sider>
