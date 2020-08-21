@@ -18,4 +18,4 @@ To run the project
 
 The project can be viewed on 
 
-https://hungry-joliot-6cd05c.netlify.app/
+https://gracious-raman-81221e.netlify.app/featured
