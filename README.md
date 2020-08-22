@@ -10,6 +10,8 @@
 - [Technical Features](#technical-features)
 - [Deployment](#deployment)
 
+## Live demo
+- <a href="https://gracious-raman-81221e.netlify.app">https://gracious-raman-81221e.netlify.app</a>
 
 ## Installation
 
@@ -57,4 +59,4 @@ $ npm start
 ```shell
 $ npm run build
 ```
-- Copy the build folder contents to a server.
+- Copy the build folder contents to a http web server.
